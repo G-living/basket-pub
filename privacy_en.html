@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — TuIA</title>
+<link rel="icon" href="assets/icons/favicon/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --white-70: rgba(255,255,255,0.7);
+  --white-30: rgba(255,255,255,0.3);
+  --white-08: rgba(255,255,255,0.08);
+  --green: #6EE7B7;
+  --blue: #4B7BE8;
+  --grad-green: linear-gradient(135deg, #E6C280, #A2D9B3, #6EE7B7);
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  padding: 18px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 20px; font-weight: 800;
+  background: var(--grad-green);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration: none;
+}
+.nav-back {
+  font-size: 14px; color: var(--white-70);
+  text-decoration: none; display: flex; align-items: center; gap: 6px;
+  transition: color 0.2s;
+}
+.nav-back:hover { color: var(--white); }
+
+/* HERO */
+.page-hero {
+  padding: 80px 40px 60px;
+  border-bottom: 1px solid var(--white-08);
+  max-width: 800px; margin: 0 auto;
+}
+.page-eyebrow {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--green);
+  margin-bottom: 14px; display: block;
+}
+.page-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 800; letter-spacing: -1.5px;
+  margin-bottom: 16px;
+}
+.page-meta {
+  font-size: 14px; color: var(--white-30);
+}
+
+/* CONTENT */
+.content {
+  max-width: 800px; margin: 0 auto;
+  padding: 60px 40px 100px;
+}
+
+.section-block {
+  margin-bottom: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--white-08);
+}
+.section-block:last-child { border-bottom: none; }
+
+h2 {
+  font-family: var(--font-display);
+  font-size: 22px; font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 16px;
+  background: var(--grad-green);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+p { color: var(--white-70); margin-bottom: 14px; }
+p:last-child { margin-bottom: 0; }
+
+ul {
+  color: var(--white-70);
+  padding-left: 0; list-style: none;
+  display: flex; flex-direction: column; gap: 8px;
+  margin-bottom: 14px;
+}
+ul li {
+  padding-left: 20px; position: relative;
+}
+ul li::before {
+  content: '✦'; position: absolute; left: 0;
+  font-size: 10px; color: var(--green); top: 4px;
+}
+
+strong { color: var(--white); font-weight: 500; }
+
+a { color: var(--green); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.highlight-box {
+  background: rgba(74,123,232,0.08);
+  border: 1px solid rgba(74,123,232,0.2);
+  border-radius: 16px; padding: 24px 28px;
+  margin: 24px 0;
+}
+.highlight-box p { color: var(--white-70); margin: 0; }
+
+/* FOOTER */
+footer {
+  padding: 40px;
+  border-top: 1px solid var(--white-08);
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 16px;
+  max-width: 800px; margin: 0 auto;
+}
+.footer-copy { font-size: 13px; color: var(--white-30); }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { font-size: 13px; color: var(--white-30); text-decoration: none; }
+.footer-links a:hover { color: var(--white-70); }
+
+@media (max-width: 768px) {
+  nav { padding: 16px 20px; }
+  .page-hero { padding: 60px 20px 40px; }
+  .content { padding: 40px 20px 80px; }
+  footer { padding: 32px 20px; flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="tuia_landing_en.html" class="nav-logo">TuIA</a>
+  <a href="tuia_landing_en.html" class="nav-back">← Back to home</a>
+</nav>
+
+<div class="page-hero">
+  <span class="page-eyebrow">Legal</span>
+  <h1 class="page-title">Privacy Policy</h1>
+  <p class="page-meta">Last updated: May 30, 2026 · Version 1.0</p>
+</div>
+
+<div class="content">
+
+  <div class="section-block">
+    <h2>1. Who we are</h2>
+    <p>TuIA ("we", "our") is a personal artificial intelligence service developed by TuIA Inc. / TuIA Colombia SAS. This document describes how we collect, use and protect the personal information of users of the TuIA application and its associated website.</p>
+    <p>For any privacy-related question: <a href="mailto:privacy@tu-ia.com">privacy@tu-ia.com</a></p>
+  </div>
+
+  <div class="section-block">
+    <h2>2. Radical Privacy — Our founding principle</h2>
+    <div class="highlight-box">
+      <p><strong>TuIA is designed to know nothing about you beyond what is strictly necessary for the service.</strong> Your memory, your conversations and your personal data live on your own servers or devices, under your total control.</p>
+    </div>
+    <p>The Anthropic (Claude) API processes every request in <strong>stateless</strong> mode: no conversation is stored on Anthropic servers between sessions. Each session is independent.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>3. Data we collect</h2>
+    <p><strong>Account data (minimal):</strong></p>
+    <ul>
+      <li>Email and name provided through Google Sign-In (OAuth 2.0)</li>
+      <li>Anonymized unique account identifier</li>
+      <li>Subscription plan and payment status (handled by Stripe)</li>
+    </ul>
+    <p><strong>Usage data (aggregated and anonymized):</strong></p>
+    <ul>
+      <li>Token count consumed per billing period</li>
+      <li>Modules activated (without their content)</li>
+      <li>Anonymous technical error logs</li>
+    </ul>
+    <p><strong>Data we do NOT collect:</strong></p>
+    <ul>
+      <li>The content of your conversations with the AI</li>
+      <li>Photos, images or personal files</li>
+      <li>Contacts, emails or calendar events</li>
+      <li>Health or biometric data</li>
+      <li>Precise geographic location</li>
+    </ul>
+  </div>
+
+  <div class="section-block">
+    <h2>4. How we use data</h2>
+    <p>The data we collect is used exclusively to:</p>
+    <ul>
+      <li>Authenticate and manage your account</li>
+      <li>Handle billing and subscription management</li>
+      <li>Provide technical support when requested by the user</li>
+      <li>Improve the service through aggregated anonymous metrics</li>
+    </ul>
+    <p>We do not sell, rent or share your personal data with third parties for commercial or advertising purposes.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>5. Third-party services</h2>
+    <p>TuIA integrates with the following services. Each has its own privacy policy:</p>
+    <ul>
+      <li><strong>Anthropic (Claude API)</strong> — stateless AI processing. <a href="https://www.anthropic.com/privacy" target="_blank">Anthropic Privacy Policy</a></li>
+      <li><strong>Google (OAuth, Calendar, Gmail)</strong> — only with the user's explicit authorization. <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
+      <li><strong>Stripe</strong> — payment processing. Card data never passes through our servers. <a href="https://stripe.com/privacy" target="_blank">Stripe Privacy Policy</a></li>
+      <li><strong>Cloudflare</strong> — hosting and DDoS protection. <a href="https://www.cloudflare.com/privacypolicy/" target="_blank">Cloudflare Privacy Policy</a></li>
+    </ul>
+  </div>
+
+  <div class="section-block">
+    <h2>6. Data security</h2>
+    <ul>
+      <li>End-to-end encryption for all communications (TLS 1.3)</li>
+      <li>Configurable TTL (Time-To-Live) for each message</li>
+      <li>Authentication via OAuth 2.0 with certified providers</li>
+      <li>No sensitive data stored in plain text</li>
+      <li>Infrastructure on Cloudflare with automatic protection</li>
+    </ul>
+  </div>
+
+  <div class="section-block">
+    <h2>7. Your rights</h2>
+    <p>In accordance with applicable regulations (GDPR, Ley 1581/2012 Colombia) you have the right to:</p>
+    <ul>
+      <li><strong>Access</strong> — request a copy of your personal data</li>
+      <li><strong>Rectification</strong> — correct inaccurate data</li>
+      <li><strong>Erasure</strong> — request complete deletion of your account and associated data</li>
+      <li><strong>Portability</strong> — export your data in a readable format</li>
+      <li><strong>Objection</strong> — object to specific processing</li>
+    </ul>
+    <p>To exercise your rights: <a href="mailto:privacy@tu-ia.com">privacy@tu-ia.com</a></p>
+  </div>
+
+  <div class="section-block">
+    <h2>8. Cookies and tracking</h2>
+    <p>TuIA uses exclusively essential technical cookies required for the service to function (authenticated session). We do not use profiling cookies, advertising tracking or third-party behavioral analytics.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>9. Minors</h2>
+    <p>TuIA is not intended for users under the age of 16. We do not knowingly collect data from minors. If you believe a minor has created an account, contact us immediately at <a href="mailto:privacy@tu-ia.com">privacy@tu-ia.com</a>.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>10. Changes to this Privacy Policy</h2>
+    <p>We reserve the right to update this policy. In the event of material changes, we will notify you by email or in-app notification at least 30 days before they take effect. Continued use of the service after that date constitutes acceptance of the changes.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>11. Contact</h2>
+    <p>For any privacy question:</p>
+    <ul>
+      <li>Email: <a href="mailto:privacy@tu-ia.com">privacy@tu-ia.com</a></li>
+      <li>General support: <a href="mailto:hello@tu-ia.com">hello@tu-ia.com</a></li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-copy">© 2026 TuIA Inc. · TuIA Colombia SAS</div>
+  <div class="footer-links">
+    <a href="tuia_landing_en.html">Home</a>
+    <a href="terms_en.html">Terms</a>
+    <a href="mailto:privacy@tu-ia.com">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
