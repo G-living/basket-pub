@@ -19,8 +19,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:cent
 .brand{display:flex;align-items:center;gap:11px}
 .brand img{width:38px;height:38px;object-fit:contain;filter:drop-shadow(0 0 14px rgba(94,110,255,.5))}
 .brand span{font-weight:700;font-size:19px;letter-spacing:-.5px}
+.nav-right{display:flex;align-items:center;gap:18px}
+.langs{display:flex;align-items:center;gap:7px}
+.flag{width:26px;height:18px;padding:0;border:0;border-radius:4px;cursor:pointer;background:none;
+ overflow:hidden;opacity:.5;line-height:0;transition:opacity .2s,transform .2s,box-shadow .2s}
+.flag svg{width:100%;height:100%;display:block;border-radius:4px}
+.flag:hover{opacity:.9;transform:translateY(-1px)}
+.flag.active{opacity:1;box-shadow:0 0 0 2px rgba(94,110,255,.9),0 0 12px rgba(94,110,255,.5)}
 .nav-cta{font-size:13.5px;font-weight:500;color:#fff;text-decoration:none;padding:9px 18px;
- border-radius:100px;background:var(--glass);border:1px solid var(--glass-bd);backdrop-filter:blur(20px);transition:.3s}
+ border-radius:100px;background:var(--glass);border:1px solid var(--glass-bd);backdrop-filter:blur(20px);transition:.3s;white-space:nowrap}
 .nav-cta:hover{background:rgba(255,255,255,.1);transform:translateY(-1px)}
 
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
@@ -78,6 +85,10 @@ section{padding:120px 7%}
 .o1{top:8%;left:1%}.o2{top:4%;right:2%;animation-delay:.8s}.o3{top:42%;left:-3%;animation-delay:1.6s}
 .o4{top:46%;right:-3%;animation-delay:2.4s}.o5{bottom:13%;left:5%;animation-delay:3.2s}.o6{bottom:7%;right:4%;animation-delay:1.1s}
 .connect{position:absolute;inset:0;z-index:1;pointer-events:none}
+.cl-glow{opacity:.85;animation:clPulse 3.4s ease-in-out infinite}
+.cl-flow{opacity:.9;animation:clFlow 1.9s linear infinite}
+@keyframes clPulse{0%,100%{opacity:.45}50%{opacity:.95}}
+@keyframes clFlow{to{stroke-dashoffset:-38}}
 
 .phone{position:relative;width:300px;height:650px;border-radius:46px;overflow:hidden;background:#0a0a12;
  flex-shrink:0;z-index:2;box-shadow:0 0 0 1.5px rgba(255,255,255,.12),0 0 0 6px #0a0a0a,
@@ -136,60 +147,72 @@ section{padding:120px 7%}
 .reveal.in{opacity:1;transform:none}
 @media(max-width:880px){.pillars-grid{grid-template-columns:1fr}.orbit{display:none}.stage{transform:scale(.92)}
  .pair{gap:12px}.pair .l,.pair .r{font-size:1.05rem}}
+@media(max-width:620px){.brand span{display:none}.nav-right{gap:10px}.langs{gap:5px}
+ .flag{width:23px;height:16px}.nav-cta{padding:8px 13px;font-size:12.5px}nav{padding:16px 5%}}
 </style></head><body><div class="wrap">
 <nav>
  <div class="brand"><img src="tuia_logo_transparent.png" alt="TuIA"><span>TuIA</span></div>
- <a href="#access" class="nav-cta">Early Access</a>
+ <div class="nav-right">
+  <div class="langs" id="langs">
+   <button class="flag" data-lang="es" title="Español"><svg viewBox="0 0 3 2"><rect width="3" height="2" fill="#AA151B"/><rect y="0.5" width="3" height="1" fill="#F1BF00"/></svg></button>
+   <button class="flag" data-lang="it" title="Italiano"><svg viewBox="0 0 3 2"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#CE2B37"/></svg></button>
+   <button class="flag" data-lang="fr" title="Français"><svg viewBox="0 0 3 2"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055A4"/><rect x="2" width="1" height="2" fill="#EF4135"/></svg></button>
+   <button class="flag" data-lang="en" title="English"><svg viewBox="0 0 60 30"><clipPath id="uk"><rect width="60" height="30"/></clipPath><g clip-path="url(#uk)"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#C8102E" stroke-width="4"/><path d="M30,0 30,30 M0,15 60,15" stroke="#fff" stroke-width="10"/><path d="M30,0 30,30 M0,15 60,15" stroke="#C8102E" stroke-width="6"/></g></svg></button>
+   <button class="flag" data-lang="de" title="Deutsch"><svg viewBox="0 0 5 3"><rect width="5" height="3" fill="#FFCE00"/><rect width="5" height="2" fill="#D00"/><rect width="5" height="1" fill="#000"/></svg></button>
+   <button class="flag" data-lang="pt" title="Português"><svg viewBox="0 0 5 3"><rect width="5" height="3" fill="#F00"/><rect width="2" height="3" fill="#060"/><circle cx="2" cy="1.5" r="0.55" fill="#FFCC00" stroke="#fff" stroke-width="0.07"/></svg></button>
+  </div>
+  <a href="#access" class="nav-cta" data-i18n="nav.cta">Early Access</a>
+ </div>
 </nav>
 
 <header class="hero">
  <img class="hero-logo" src="tuia_logo_transparent.png" alt="TuIA">
- <div class="badge"><i></i>Memory-Native Intelligence</div>
- <h1 class="hero-h">The first intelligence <span class="grad">built around your life.</span></h1>
- <p class="sub">TuIA connects your memories, relationships, goals, communication and context into one living intelligence that becomes uniquely yours.</p>
- <div class="cta"><a href="#access" class="btn-p">Join Early Access &rarr;</a><a href="#" class="btn-s">&#9654; Watch Demo</a></div>
- <div class="pills"><div class="pill">Persistent Memory</div><div class="pill">Privacy by Architecture</div><div class="pill">iOS &amp; Android Native</div><div class="pill">Built Around Your Life</div></div>
+ <div class="badge"><i></i><span data-i18n="hero.badge">Memory-Native Intelligence</span></div>
+ <h1 class="hero-h"><span data-i18n="hero.h1a">The first Memory-Native Intelligence</span> <span class="grad" data-i18n="hero.h1b">built around your life.</span></h1>
+ <p class="sub" data-i18n="hero.sub">TuIA connects your memories, relationships, goals, communication and context into one living intelligence that becomes uniquely yours.</p>
+ <div class="cta"><a href="#access" class="btn-p" data-i18n="btn.join">Join Early Access &rarr;</a><a href="#" class="btn-s" data-i18n="btn.demo">&#9654; Watch Demo</a></div>
+ <div class="pills"><div class="pill" data-i18n="pill.1">Persistent Memory</div><div class="pill" data-i18n="pill.2">Privacy by Architecture</div><div class="pill" data-i18n="pill.3">iOS &amp; Android Native</div><div class="pill" data-i18n="pill.4">Built Around Your Life</div></div>
 </header>
 
 <section>
- <div class="eyebrow reveal">Core Belief</div>
- <h2 class="big reveal">You don't need more apps.<br><span class="em">You need continuity.</span></h2>
- <p class="lead reveal">Technology became fragmented. Email in one place, calendar in another, messages somewhere else. Memories fade. Relationships turn into data. The problem was never access to information &mdash; it was the absence of memory.</p>
+ <div class="eyebrow reveal" data-i18n="s1.eyebrow">Core Belief</div>
+ <h2 class="big reveal"><span data-i18n="s1.ha">You don't need more apps.</span><br><span class="em" data-i18n="s1.hb">You need continuity.</span></h2>
+ <p class="lead reveal" data-i18n="s1.lead">Technology became fragmented. Email in one place, calendar in another, messages somewhere else. Memories fade. Relationships turn into data. The problem was never access to information &mdash; it was the absence of memory.</p>
 </section>
 
 <section>
- <h2 class="big reveal">AI was never the problem.<br><span class="em">Memory was.</span></h2>
+ <h2 class="big reveal"><span data-i18n="s2.ha">AI was never the problem.</span><br><span class="em" data-i18n="s2.hb">Memory was.</span></h2>
  <div class="narr">
-  <div class="pair reveal"><div class="l">Most AI remembers conversations.</div><div class="arr">&rarr;</div><div class="r">TuIA remembers context.</div></div>
-  <div class="pair reveal"><div class="l">Most AI responds.</div><div class="arr">&rarr;</div><div class="r">TuIA understands.</div></div>
-  <div class="pair reveal"><div class="l">Most AI starts from prompts.</div><div class="arr">&rarr;</div><div class="r">TuIA starts from memory.</div></div>
-  <div class="pair reveal"><div class="l">Most apps manage information.</div><div class="arr">&rarr;</div><div class="r">TuIA understands lives.</div></div>
+  <div class="pair reveal"><div class="l" data-i18n="s2.p1l">Most AI remembers conversations.</div><div class="arr">&rarr;</div><div class="r" data-i18n="s2.p1r">TuIA remembers context.</div></div>
+  <div class="pair reveal"><div class="l" data-i18n="s2.p2l">Most AI responds.</div><div class="arr">&rarr;</div><div class="r" data-i18n="s2.p2r">TuIA understands.</div></div>
+  <div class="pair reveal"><div class="l" data-i18n="s2.p3l">Most AI starts from prompts.</div><div class="arr">&rarr;</div><div class="r" data-i18n="s2.p3r">TuIA starts from memory.</div></div>
+  <div class="pair reveal"><div class="l" data-i18n="s2.p4l">Most apps manage information.</div><div class="arr">&rarr;</div><div class="r" data-i18n="s2.p4r">TuIA understands lives.</div></div>
  </div>
 </section>
 
 <section>
- <div class="eyebrow reveal">A new category</div>
- <h2 class="big reveal">One memory. Every context.</h2>
- <p class="lead reveal">An intelligence built on persistent memory &mdash; understanding your life across time, relationships and contexts.</p>
+ <div class="eyebrow reveal" data-i18n="s3.eyebrow">A new category</div>
+ <h2 class="big reveal" data-i18n="s3.h">One memory. Every context.</h2>
+ <p class="lead reveal" data-i18n="s3.lead">An intelligence built on persistent memory &mdash; understanding your life across time, relationships and contexts.</p>
  <div class="stage">
-  <svg class="connect" viewBox="0 0 1080 700" preserveAspectRatio="none"><defs><linearGradient id="ln" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="rgba(94,110,255,.5)"/><stop offset="100%" stop-color="rgba(94,110,255,0)"/></linearGradient></defs><g stroke="url(#ln)" stroke-width="1" fill="none" opacity=".5"><path d="M150 120 L540 350"/><path d="M930 90 L540 350"/><path d="M120 330 L540 350"/><path d="M960 360 L540 350"/><path d="M210 600 L540 350"/><path d="M880 620 L540 350"/></g></svg>
-  <div class="orbit o1"><b>&#9993; Email</b><small>Knows your context</small></div>
-  <div class="orbit o2"><b>&#128197; Calendar</b><small>Knows your time</small></div>
-  <div class="orbit o3"><b>&#10084; Health</b><small>Knows your wellbeing</small></div>
-  <div class="orbit o4"><b>&#9992; Travel</b><small>Knows your plans</small></div>
-  <div class="orbit o5"><b>&#128101; Relationships</b><small>Knows who matters</small></div>
-  <div class="orbit o6"><b>&#128274; E2E Chat</b><small>Knows nothing</small></div>
+  <svg class="connect" viewBox="0 0 1080 700" preserveAspectRatio="none"><defs><linearGradient id="ln" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#9aa6ff"/><stop offset="50%" stop-color="#5E6EFF"/><stop offset="100%" stop-color="#2B2EFF"/></linearGradient><filter id="glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><g class="cl-glow" stroke="url(#ln)" fill="none" filter="url(#glow)" stroke-linecap="round" stroke-width="2.4"><path d="M150 120 L540 350"/><path d="M930 90 L540 350"/><path d="M120 330 L540 350"/><path d="M960 360 L540 350"/><path d="M210 600 L540 350"/><path d="M880 620 L540 350"/></g><g class="cl-flow" stroke="#cfd6ff" fill="none" stroke-linecap="round" stroke-width="1.6" stroke-dasharray="3 16"><path d="M150 120 L540 350"/><path d="M930 90 L540 350"/><path d="M120 330 L540 350"/><path d="M960 360 L540 350"/><path d="M210 600 L540 350"/><path d="M880 620 L540 350"/></g></svg>
+  <div class="orbit o1"><b>&#9993; <span data-i18n="orbit.email.t">Email</span></b><small data-i18n="orbit.email.s">Knows your context</small></div>
+  <div class="orbit o2"><b>&#128197; <span data-i18n="orbit.cal.t">Calendar</span></b><small data-i18n="orbit.cal.s">Knows your time</small></div>
+  <div class="orbit o3"><b>&#10084; <span data-i18n="orbit.health.t">Health</span></b><small data-i18n="orbit.health.s">Knows your wellbeing</small></div>
+  <div class="orbit o4"><b>&#9992; <span data-i18n="orbit.travel.t">Travel</span></b><small data-i18n="orbit.travel.s">Knows your plans</small></div>
+  <div class="orbit o5"><b>&#128101; <span data-i18n="orbit.rel.t">Relationships</span></b><small data-i18n="orbit.rel.s">Knows who matters</small></div>
+  <div class="orbit o6"><b>&#128274; <span data-i18n="orbit.chat.t">E2E Chat</span></b><small data-i18n="orbit.chat.s">Knows nothing</small></div>
   <div class="phone">
  <div class="ph-bg"></div><div class="ph-ov"></div><div class="ph-ovr"></div>
  <div class="ph-sbar"><span>10:05</span><div class="ico">
   <svg width="16" height="11" viewBox="0 0 16 11"><g fill="rgba(255,255,255,.85)"><rect x="0" y="6" width="2.6" height="5" rx="1"/><rect x="3.7" y="4" width="2.6" height="7" rx="1"/><rect x="7.4" y="2" width="2.6" height="9" rx="1"/></g></svg>
   <svg width="20" height="11" viewBox="0 0 20 11"><rect x="0" y="0" width="17" height="11" rx="2.5" fill="none" stroke="rgba(255,255,255,.6)"/><rect x="2" y="2" width="11" height="7" rx="1" fill="rgba(255,255,255,.85)"/><rect x="18" y="3.5" width="2" height="4" rx="1" fill="rgba(255,255,255,.5)"/></svg></div></div>
- <div class="ph-head"><span class="ph-greet">Good morning, Filippo.</span>
+ <div class="ph-head"><span class="ph-greet" data-i18n="phone.greet">Good morning, Filippo.</span>
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="rgba(255,255,255,.82)" stroke-width="2.2"/><path d="M4 21v-1a8 8 0 0116 0v1" stroke="rgba(255,255,255,.82)" stroke-width="2.2" stroke-linecap="round"/></svg></div>
  <div class="ph-right"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="17" rx="2.5" fill="rgba(255,255,255,.92)"/><rect x="2" y="5" width="20" height="6" rx="2.5" fill="rgba(255,255,255,.5)"/><rect x="7" y="3" width="2.5" height="5" rx="1.2" fill="rgba(255,255,255,.92)"/><rect x="14.5" y="3" width="2.5" height="5" rx="1.2" fill="rgba(255,255,255,.92)"/></svg> <svg width="20" height="20" viewBox="0 0 24 24"><path d="M21 15.5L13.5 12 16 4.5l-1.5-.5L10 11.5 4 9.5 3 11l5.5 3.5L7 19l2 .5 3-4.5 9 3 .5-2.5z" fill="rgba(255,255,255,.92)"/></svg> <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><text x="12" y="19" text-anchor="middle" font-size="20" font-weight="700" fill="rgba(255,255,255,.92)" font-family="Inter,Arial">$</text></svg> <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z" fill="rgba(255,255,255,.92)"/><path d="M2 6l10 8 10-8" stroke="rgba(43,46,255,.32)" stroke-width="1.8" stroke-linecap="round"/></svg> <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" fill="rgba(255,255,255,.92)"/></svg> <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="8" cy="7" r="3.5" fill="rgba(255,255,255,.92)"/><path d="M1 21v-1a6.5 6.5 0 0113 0v1" fill="rgba(255,255,255,.92)"/><circle cx="17" cy="7" r="3" fill="rgba(255,255,255,.55)"/><path d="M16 21v-1a5.5 5.5 0 017 0v1" fill="rgba(255,255,255,.55)"/></svg></div>
  <div class="ph-events">
-  <div class="ph-ev"><span class="t">11:00</span><span class="n">Call with Adam</span></div>
-  <div class="ph-ev"><span class="t">14:30</span><span class="n">G-Living Review</span></div></div>
+  <div class="ph-ev"><span class="t">11:00</span><span class="n" data-i18n="phone.ev1">Call with Adam</span></div>
+  <div class="ph-ev"><span class="t">14:30</span><span class="n" data-i18n="phone.ev2">G-Living Review</span></div></div>
  <div class="ph-sos"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" stroke="rgba(255,90,90,.85)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 9v5" stroke="rgba(255,90,90,.85)" stroke-width="2.4" stroke-linecap="round"/><circle cx="12" cy="18.5" r=".9" fill="rgba(255,90,90,.85)"/></svg></div>
  <div class="ph-nav">
   <div class="it"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" fill="rgba(255,255,255,.92)"/><path d="M9 21V13h6v8" stroke="rgba(0,0,0,.22)" stroke-width="2.2" stroke-linecap="round"/></svg></div><div class="it" style="opacity:.55"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="14" height="18" rx="2" stroke="rgba(255,255,255,.9)" stroke-width="2.2"/><path d="M8 8h6M8 12h6M8 16h3" stroke="rgba(255,255,255,.9)" stroke-width="1.8" stroke-linecap="round"/></svg></div>
@@ -200,55 +223,51 @@ section{padding:120px 7%}
 </section>
 
 <section>
- <div class="eyebrow reveal">Brand Pillars</div>
- <h2 class="big reveal">Built on what matters.</h2>
+ <div class="eyebrow reveal" data-i18n="pillars.eyebrow">Brand Pillars</div>
+ <h2 class="big reveal" data-i18n="pillars.h">Built on what matters.</h2>
  <div class="pillars-grid">
-  <div class="pcard reveal"><div class="pi">&#129504;</div><h3>Memory</h3><p>Persistent understanding over time. Not isolated interactions &mdash; continuous intelligence.</p></div>
-  <div class="pcard reveal"><div class="pi">&#128101;</div><h3>Relationships</h3><p>Technology should strengthen human connections, not replace them. Family. Friends. Trusted contacts.</p></div>
-  <div class="pcard reveal"><div class="pi">&#128274;</div><h3>Privacy</h3><p>Trust is non-negotiable. End-to-end encrypted. Explicit permissions. Privacy by architecture.</p></div>
-  <div class="pcard reveal"><div class="pi">&#10084;</div><h3>Wellbeing</h3><p>Technology should reduce stress, not create it. Health, SOS and daily guidance built in.</p></div>
-  <div class="pcard reveal"><div class="pi">&#127760;</div><h3>Community</h3><p>Not a platform. Not a social network. A trusted ecosystem &mdash; communication, marketplace, collaboration.</p></div>
-  <div class="pcard reveal" style="background:linear-gradient(160deg,rgba(43,46,255,.16),rgba(43,46,255,.03));border-color:rgba(94,110,255,.4)"><div class="pi">&#10024;</div><h3>Continuity</h3><p>A digital continuity system. The more you live, the better TuIA understands.</p></div>
+  <div class="pcard reveal"><div class="pi">&#129504;</div><h3 data-i18n="pc1.h">Memory</h3><p data-i18n="pc1.p">Persistent understanding over time. Not isolated interactions &mdash; continuous intelligence.</p></div>
+  <div class="pcard reveal"><div class="pi">&#128101;</div><h3 data-i18n="pc2.h">Relationships</h3><p data-i18n="pc2.p">Technology should strengthen human connections, not replace them. Family. Friends. Trusted contacts.</p></div>
+  <div class="pcard reveal"><div class="pi">&#128274;</div><h3 data-i18n="pc3.h">Privacy</h3><p data-i18n="pc3.p">Trust is non-negotiable. End-to-end encrypted. Explicit permissions. Privacy by architecture.</p></div>
+  <div class="pcard reveal"><div class="pi">&#10084;</div><h3 data-i18n="pc4.h">Wellbeing</h3><p data-i18n="pc4.p">Technology should reduce stress, not create it. Health, SOS and daily guidance built in.</p></div>
+  <div class="pcard reveal"><div class="pi">&#127760;</div><h3 data-i18n="pc5.h">Community</h3><p data-i18n="pc5.p">Not a platform. Not a social network. A trusted ecosystem &mdash; communication, marketplace, collaboration.</p></div>
+  <div class="pcard reveal" style="background:linear-gradient(160deg,rgba(43,46,255,.16),rgba(43,46,255,.03));border-color:rgba(94,110,255,.4)"><div class="pi">&#10024;</div><h3 data-i18n="pc6.h">Continuity</h3><p data-i18n="pc6.p">A digital continuity system. The more you live, the better TuIA understands.</p></div>
  </div>
 </section>
 
 <section class="privacy">
  <div class="lock reveal">&#128274;</div>
- <h2 class="big reveal">Your private conversations<br>stay private.</h2>
+ <h2 class="big reveal"><span data-i18n="priv.ha">Your private conversations</span><br><span data-i18n="priv.hb">stay private.</span></h2>
  <div class="trust">
-  <div class="reveal">End-to-end encrypted</div><div class="reveal">Never used for training</div>
-  <div class="reveal">Never analyzed without permission</div><div class="reveal">Delete everything, anytime</div></div>
- <div class="priv-tag reveal">Privacy by architecture.</div>
+  <div class="reveal" data-i18n="trust.1">End-to-end encrypted</div><div class="reveal" data-i18n="trust.2">Never used for training</div>
+  <div class="reveal" data-i18n="trust.3">Never analyzed without permission</div><div class="reveal" data-i18n="trust.4">Delete everything, anytime</div></div>
+ <div class="priv-tag reveal" data-i18n="priv.tag">Privacy by architecture.</div>
 </section>
 
 <section class="promise">
- <h2 class="reveal">The more you live,<br>the better <b>TuIA understands.</b></h2>
+ <h2 class="reveal"><span data-i18n="promise.a">The more you live, the better</span> <b data-i18n="promise.b">TuIA understands.</b></h2>
 </section>
 
 <section class="foot" id="access">
- <h2 class="reveal">Built around <span class="grad">your life.</span></h2>
- <p class="reveal">Join the first Memory-Native Intelligence. Limited early access.</p>
- <div class="cta reveal"><a href="#" class="btn-p">Join Early Access &rarr;</a><a href="#" class="btn-s">&#9654; Watch Demo</a></div>
- <div class="foot-bar"><div class="brand"><img src="tuia_logo_transparent.png" alt="TuIA" style="object-fit:contain"><span>TuIA</span></div><div>Android &middot; iOS in development &middot; &copy; 2026 &middot; <a href="privacy_en.html" class="foot-legal">Privacy</a> &middot; <a href="terms_en.html" class="foot-legal">Terms</a></div></div>
+ <h2 class="reveal"><span data-i18n="foot.ha">Built around</span> <span class="grad" data-i18n="foot.hb">your life.</span></h2>
+ <p class="reveal" data-i18n="foot.p">Join the first Memory-Native Intelligence. Limited early access.</p>
+ <div class="cta reveal"><a href="#" class="btn-p" data-i18n="btn.join">Join Early Access &rarr;</a><a href="#" class="btn-s" data-i18n="btn.demo">&#9654; Watch Demo</a></div>
+ <div class="foot-bar"><div class="brand"><img src="tuia_logo_transparent.png" alt="TuIA" style="object-fit:contain"><span>TuIA</span></div><div><span data-i18n="foot.bar">Android &middot; iOS in development &middot; &copy; 2026</span> &middot; <a href="privacy_en.html" class="foot-legal" data-i18n="foot.privacy" data-legal="privacy">Privacy</a> &middot; <a href="terms_en.html" class="foot-legal" data-i18n="foot.terms" data-legal="terms">Terms</a></div></div>
 </section>
-</div><script>
-const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.16});
-document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4*0.07)+'s';io.observe(el)});
-addEventListener('scroll',()=>{const y=scrollY,ph=document.querySelector('.phone');if(ph&&y<2400)ph.style.transform='translateY('+(y*0.03)+'px)'});
-</script>
+</div>
 <!-- Early Access waitlist popup -->
 <div class="wl-overlay" id="wlOverlay" aria-hidden="true">
  <div class="wl-card" role="dialog" aria-modal="true" aria-labelledby="wlTitle">
   <button class="wl-close" id="wlClose" type="button" aria-label="Close">&times;</button>
-  <h3 id="wlTitle">Join Early Access</h3>
-  <p class="wl-sub">Be among the first to try the first Memory-Native Intelligence.</p>
+  <h3 id="wlTitle" data-i18n="wl.title">Join Early Access</h3>
+  <p class="wl-sub" data-i18n="wl.sub">Be among the first to try the first Memory-Native Intelligence.</p>
   <form id="wlForm" novalidate>
-   <input type="text" id="wlName" name="name" placeholder="Your name" autocomplete="name" required>
-   <input type="email" id="wlEmail" name="email" placeholder="you@email.com" autocomplete="email" required>
-   <button type="submit" class="wl-submit" id="wlSubmit">Request access</button>
+   <input type="text" id="wlName" name="name" placeholder="Your name" data-i18n-ph="wl.name" autocomplete="name" required>
+   <input type="email" id="wlEmail" name="email" placeholder="you@email.com" data-i18n-ph="wl.email" autocomplete="email" required>
+   <button type="submit" class="wl-submit" id="wlSubmit" data-i18n="wl.submit">Request access</button>
    <p class="wl-status" id="wlStatus" role="status"></p>
   </form>
-  <p class="wl-consent">By joining you agree to our <a href="privacy_en.html">Privacy Policy</a> and <a href="terms_en.html">Terms</a>.</p>
+  <p class="wl-consent" data-i18n-html="wl.consent">By joining you agree to our <a href="privacy_en.html">Privacy Policy</a> and <a href="terms_en.html">Terms</a>.</p>
  </div>
 </div>
 <style>
@@ -277,10 +296,61 @@ addEventListener('scroll',()=>{const y=scrollY,ph=document.querySelector('.phone
 .foot-legal:hover{color:#fff;text-decoration:underline}
 </style>
 <script>
+/* ---- i18n dictionary (6 languages) ---- */
+var I18N={
+en:{"meta.title":"TuIA — The first Memory-Native Intelligence","nav.cta":"Early Access","hero.badge":"Memory-Native Intelligence","hero.h1a":"The first Memory-Native Intelligence","hero.h1b":"built around your life.","hero.sub":"TuIA connects your memories, relationships, goals, communication and context into one living intelligence that becomes uniquely yours.","btn.join":"Join Early Access →","btn.demo":"▶ Watch Demo","pill.1":"Persistent Memory","pill.2":"Privacy by Architecture","pill.3":"iOS & Android Native","pill.4":"Built Around Your Life","s1.eyebrow":"Core Belief","s1.ha":"You don't need more apps.","s1.hb":"You need continuity.","s1.lead":"Technology became fragmented. Email in one place, calendar in another, messages somewhere else. Memories fade. Relationships turn into data. The problem was never access to information — it was the absence of memory.","s2.ha":"AI was never the problem.","s2.hb":"Memory was.","s2.p1l":"Most AI remembers conversations.","s2.p1r":"TuIA remembers context.","s2.p2l":"Most AI responds.","s2.p2r":"TuIA understands.","s2.p3l":"Most AI starts from prompts.","s2.p3r":"TuIA starts from memory.","s2.p4l":"Most apps manage information.","s2.p4r":"TuIA understands lives.","s3.eyebrow":"A new category","s3.h":"One memory. Every context.","s3.lead":"An intelligence built on persistent memory — understanding your life across time, relationships and contexts.","orbit.email.t":"Email","orbit.email.s":"Knows your context","orbit.cal.t":"Calendar","orbit.cal.s":"Knows your time","orbit.health.t":"Health","orbit.health.s":"Knows your wellbeing","orbit.travel.t":"Travel","orbit.travel.s":"Knows your plans","orbit.rel.t":"Relationships","orbit.rel.s":"Knows who matters","orbit.chat.t":"E2E Chat","orbit.chat.s":"Knows nothing","phone.greet":"Good morning, Filippo.","phone.ev1":"Call with Adam","phone.ev2":"G-Living Review","pillars.eyebrow":"Brand Pillars","pillars.h":"Built on what matters.","pc1.h":"Memory","pc1.p":"Persistent understanding over time. Not isolated interactions — continuous intelligence.","pc2.h":"Relationships","pc2.p":"Technology should strengthen human connections, not replace them. Family. Friends. Trusted contacts.","pc3.h":"Privacy","pc3.p":"Trust is non-negotiable. End-to-end encrypted. Explicit permissions. Privacy by architecture.","pc4.h":"Wellbeing","pc4.p":"Technology should reduce stress, not create it. Health, SOS and daily guidance built in.","pc5.h":"Community","pc5.p":"Not a platform. Not a social network. A trusted ecosystem — communication, marketplace, collaboration.","pc6.h":"Continuity","pc6.p":"A digital continuity system. The more you live, the better TuIA understands.","priv.ha":"Your private conversations","priv.hb":"stay private.","trust.1":"End-to-end encrypted","trust.2":"Never used for training","trust.3":"Never analyzed without permission","trust.4":"Delete everything, anytime","priv.tag":"Privacy by architecture.","promise.a":"The more you live, the better","promise.b":"TuIA understands.","foot.ha":"Built around","foot.hb":"your life.","foot.p":"Join the first Memory-Native Intelligence. Limited early access.","foot.bar":"Android · iOS in development · © 2026","foot.privacy":"Privacy","foot.terms":"Terms","wl.title":"Join Early Access","wl.sub":"Be among the first to try the first Memory-Native Intelligence.","wl.name":"Your name","wl.email":"you@email.com","wl.submit":"Request access","wl.consent":'By joining you agree to our <a href="{P}">Privacy Policy</a> and <a href="{T}">Terms</a>.',"st.invalid":"Please enter a valid email address.","st.sending":"Sending…","st.ok":"You're on the list! We'll be in touch.","st.err":"Something went wrong. Please try again."},
+es:{"meta.title":"TuIA — La primera inteligencia Memory-Native","nav.cta":"Acceso anticipado","hero.badge":"Memory-Native Intelligence","hero.h1a":"La primera inteligencia Memory-Native","hero.h1b":"creada en torno a tu vida.","hero.sub":"TuIA conecta tus recuerdos, relaciones, objetivos, comunicación y contexto en una sola inteligencia viva que se vuelve únicamente tuya.","btn.join":"Únete al acceso anticipado →","btn.demo":"▶ Ver demo","pill.1":"Memoria persistente","pill.2":"Privacidad por arquitectura","pill.3":"Nativa en iOS y Android","pill.4":"Creada en torno a tu vida","s1.eyebrow":"Creencia fundamental","s1.ha":"No necesitas más apps.","s1.hb":"Necesitas continuidad.","s1.lead":"La tecnología se fragmentó. El correo en un sitio, el calendario en otro, los mensajes en otra parte. Los recuerdos se desvanecen. Las relaciones se convierten en datos. El problema nunca fue el acceso a la información: fue la ausencia de memoria.","s2.ha":"La IA nunca fue el problema.","s2.hb":"La memoria sí.","s2.p1l":"La mayoría de las IA recuerdan conversaciones.","s2.p1r":"TuIA recuerda el contexto.","s2.p2l":"La mayoría de las IA responden.","s2.p2r":"TuIA entiende.","s2.p3l":"La mayoría de las IA parten de prompts.","s2.p3r":"TuIA parte de la memoria.","s2.p4l":"La mayoría de las apps gestionan información.","s2.p4r":"TuIA entiende vidas.","s3.eyebrow":"Una nueva categoría","s3.h":"Una memoria. Cada contexto.","s3.lead":"Una inteligencia construida sobre memoria persistente, que entiende tu vida a través del tiempo, las relaciones y los contextos.","orbit.email.t":"Correo","orbit.email.s":"Conoce tu contexto","orbit.cal.t":"Calendario","orbit.cal.s":"Conoce tu tiempo","orbit.health.t":"Salud","orbit.health.s":"Conoce tu bienestar","orbit.travel.t":"Viajes","orbit.travel.s":"Conoce tus planes","orbit.rel.t":"Relaciones","orbit.rel.s":"Sabe quién importa","orbit.chat.t":"Chat E2E","orbit.chat.s":"No sabe nada","phone.greet":"Buenos días, Filippo.","phone.ev1":"Llamada con Adam","phone.ev2":"Revisión G-Living","pillars.eyebrow":"Pilares de marca","pillars.h":"Construida sobre lo que importa.","pc1.h":"Memoria","pc1.p":"Comprensión persistente a lo largo del tiempo. No interacciones aisladas: inteligencia continua.","pc2.h":"Relaciones","pc2.p":"La tecnología debe fortalecer las conexiones humanas, no reemplazarlas. Familia. Amigos. Contactos de confianza.","pc3.h":"Privacidad","pc3.p":"La confianza es innegociable. Cifrado de extremo a extremo. Permisos explícitos. Privacidad por arquitectura.","pc4.h":"Bienestar","pc4.p":"La tecnología debe reducir el estrés, no crearlo. Salud, SOS y orientación diaria integrados.","pc5.h":"Comunidad","pc5.p":"No es una plataforma. No es una red social. Un ecosistema de confianza: comunicación, marketplace, colaboración.","pc6.h":"Continuidad","pc6.p":"Un sistema de continuidad digital. Cuanto más vives, mejor te entiende TuIA.","priv.ha":"Tus conversaciones privadas","priv.hb":"siguen siendo privadas.","trust.1":"Cifrado de extremo a extremo","trust.2":"Nunca se usa para entrenar","trust.3":"Nunca se analiza sin permiso","trust.4":"Borra todo, cuando quieras","priv.tag":"Privacidad por arquitectura.","promise.a":"Cuanto más vives, mejor","promise.b":"te entiende TuIA.","foot.ha":"Creada en torno a","foot.hb":"tu vida.","foot.p":"Únete a la primera inteligencia Memory-Native. Acceso anticipado limitado.","foot.bar":"Android · iOS en desarrollo · © 2026","foot.privacy":"Privacidad","foot.terms":"Términos","wl.title":"Únete al acceso anticipado","wl.sub":"Sé de los primeros en probar la primera inteligencia Memory-Native.","wl.name":"Tu nombre","wl.email":"tu@email.com","wl.submit":"Solicitar acceso","wl.consent":'Al unirte aceptas nuestra <a href="{P}">Política de Privacidad</a> y los <a href="{T}">Términos</a>.',"st.invalid":"Introduce una dirección de correo válida.","st.sending":"Enviando…","st.ok":"¡Estás en la lista! Te contactaremos.","st.err":"Algo salió mal. Inténtalo de nuevo."},
+it:{"meta.title":"TuIA — La prima intelligenza Memory-Native","nav.cta":"Accesso anticipato","hero.badge":"Memory-Native Intelligence","hero.h1a":"La prima intelligenza Memory-Native","hero.h1b":"costruita intorno alla tua vita.","hero.sub":"TuIA collega i tuoi ricordi, le relazioni, gli obiettivi, la comunicazione e il contesto in un'unica intelligenza viva che diventa unicamente tua.","btn.join":"Unisciti all'accesso anticipato →","btn.demo":"▶ Guarda la demo","pill.1":"Memoria persistente","pill.2":"Privacy per architettura","pill.3":"Nativa su iOS e Android","pill.4":"Costruita intorno alla tua vita","s1.eyebrow":"Convinzione fondante","s1.ha":"Non ti servono più app.","s1.hb":"Ti serve continuità.","s1.lead":"La tecnologia è diventata frammentata. L'email in un posto, il calendario in un altro, i messaggi da un'altra parte. I ricordi svaniscono. Le relazioni diventano dati. Il problema non è mai stato l'accesso alle informazioni: è stata l'assenza di memoria.","s2.ha":"L'IA non è mai stata il problema.","s2.hb":"Lo era la memoria.","s2.p1l":"La maggior parte delle IA ricorda le conversazioni.","s2.p1r":"TuIA ricorda il contesto.","s2.p2l":"La maggior parte delle IA risponde.","s2.p2r":"TuIA comprende.","s2.p3l":"La maggior parte delle IA parte dai prompt.","s2.p3r":"TuIA parte dalla memoria.","s2.p4l":"La maggior parte delle app gestisce informazioni.","s2.p4r":"TuIA comprende le vite.","s3.eyebrow":"Una nuova categoria","s3.h":"Una memoria. Ogni contesto.","s3.lead":"Un'intelligenza costruita sulla memoria persistente, che comprende la tua vita attraverso il tempo, le relazioni e i contesti.","orbit.email.t":"Email","orbit.email.s":"Conosce il tuo contesto","orbit.cal.t":"Calendario","orbit.cal.s":"Conosce il tuo tempo","orbit.health.t":"Salute","orbit.health.s":"Conosce il tuo benessere","orbit.travel.t":"Viaggi","orbit.travel.s":"Conosce i tuoi piani","orbit.rel.t":"Relazioni","orbit.rel.s":"Sa chi conta","orbit.chat.t":"Chat E2E","orbit.chat.s":"Non sa nulla","phone.greet":"Buongiorno, Filippo.","phone.ev1":"Chiamata con Adam","phone.ev2":"Revisione G-Living","pillars.eyebrow":"Pilastri del brand","pillars.h":"Costruita su ciò che conta.","pc1.h":"Memoria","pc1.p":"Comprensione persistente nel tempo. Non interazioni isolate: intelligenza continua.","pc2.h":"Relazioni","pc2.p":"La tecnologia dovrebbe rafforzare i legami umani, non sostituirli. Famiglia. Amici. Contatti fidati.","pc3.h":"Privacy","pc3.p":"La fiducia non è negoziabile. Crittografia end-to-end. Permessi espliciti. Privacy per architettura.","pc4.h":"Benessere","pc4.p":"La tecnologia dovrebbe ridurre lo stress, non crearlo. Salute, SOS e guida quotidiana integrati.","pc5.h":"Comunità","pc5.p":"Non una piattaforma. Non un social network. Un ecosistema fidato: comunicazione, marketplace, collaborazione.","pc6.h":"Continuità","pc6.p":"Un sistema di continuità digitale. Più vivi, meglio TuIA ti comprende.","priv.ha":"Le tue conversazioni private","priv.hb":"restano private.","trust.1":"Crittografia end-to-end","trust.2":"Mai usate per l'addestramento","trust.3":"Mai analizzate senza permesso","trust.4":"Cancella tutto, quando vuoi","priv.tag":"Privacy per architettura.","promise.a":"Più vivi, meglio","promise.b":"TuIA ti comprende.","foot.ha":"Costruita intorno alla","foot.hb":"tua vita.","foot.p":"Unisciti alla prima intelligenza Memory-Native. Accesso anticipato limitato.","foot.bar":"Android · iOS in sviluppo · © 2026","foot.privacy":"Privacy","foot.terms":"Termini","wl.title":"Unisciti all'accesso anticipato","wl.sub":"Sii tra i primi a provare la prima intelligenza Memory-Native.","wl.name":"Il tuo nome","wl.email":"tu@email.com","wl.submit":"Richiedi l'accesso","wl.consent":'Iscrivendoti accetti la nostra <a href="{P}">Informativa sulla Privacy</a> e i <a href="{T}">Termini</a>.',"st.invalid":"Inserisci un indirizzo email valido.","st.sending":"Invio in corso…","st.ok":"Sei nella lista! Ti contatteremo.","st.err":"Qualcosa è andato storto. Riprova."},
+fr:{"meta.title":"TuIA — La première intelligence Memory-Native","nav.cta":"Accès anticipé","hero.badge":"Memory-Native Intelligence","hero.h1a":"La première intelligence Memory-Native","hero.h1b":"conçue autour de votre vie.","hero.sub":"TuIA relie vos souvenirs, vos relations, vos objectifs, votre communication et votre contexte en une seule intelligence vivante qui devient uniquement la vôtre.","btn.join":"Rejoindre l'accès anticipé →","btn.demo":"▶ Voir la démo","pill.1":"Mémoire persistante","pill.2":"Confidentialité par architecture","pill.3":"Native sur iOS et Android","pill.4":"Conçue autour de votre vie","s1.eyebrow":"Conviction fondatrice","s1.ha":"Vous n'avez pas besoin de plus d'apps.","s1.hb":"Vous avez besoin de continuité.","s1.lead":"La technologie s'est fragmentée. L'e-mail à un endroit, l'agenda à un autre, les messages ailleurs. Les souvenirs s'estompent. Les relations deviennent des données. Le problème n'a jamais été l'accès à l'information : c'était l'absence de mémoire.","s2.ha":"L'IA n'a jamais été le problème.","s2.hb":"La mémoire, si.","s2.p1l":"La plupart des IA se souviennent des conversations.","s2.p1r":"TuIA se souvient du contexte.","s2.p2l":"La plupart des IA répondent.","s2.p2r":"TuIA comprend.","s2.p3l":"La plupart des IA partent de prompts.","s2.p3r":"TuIA part de la mémoire.","s2.p4l":"La plupart des apps gèrent l'information.","s2.p4r":"TuIA comprend les vies.","s3.eyebrow":"Une nouvelle catégorie","s3.h":"Une mémoire. Chaque contexte.","s3.lead":"Une intelligence bâtie sur une mémoire persistante, qui comprend votre vie à travers le temps, les relations et les contextes.","orbit.email.t":"E-mail","orbit.email.s":"Connaît votre contexte","orbit.cal.t":"Agenda","orbit.cal.s":"Connaît votre temps","orbit.health.t":"Santé","orbit.health.s":"Connaît votre bien-être","orbit.travel.t":"Voyages","orbit.travel.s":"Connaît vos plans","orbit.rel.t":"Relations","orbit.rel.s":"Sait qui compte","orbit.chat.t":"Chat E2E","orbit.chat.s":"Ne sait rien","phone.greet":"Bonjour, Filippo.","phone.ev1":"Appel avec Adam","phone.ev2":"Revue G-Living","pillars.eyebrow":"Piliers de la marque","pillars.h":"Bâtie sur l'essentiel.","pc1.h":"Mémoire","pc1.p":"Une compréhension persistante dans le temps. Pas des interactions isolées : une intelligence continue.","pc2.h":"Relations","pc2.p":"La technologie doit renforcer les liens humains, pas les remplacer. Famille. Amis. Contacts de confiance.","pc3.h":"Confidentialité","pc3.p":"La confiance n'est pas négociable. Chiffrement de bout en bout. Permissions explicites. Confidentialité par architecture.","pc4.h":"Bien-être","pc4.p":"La technologie doit réduire le stress, pas le créer. Santé, SOS et conseils quotidiens intégrés.","pc5.h":"Communauté","pc5.p":"Pas une plateforme. Pas un réseau social. Un écosystème de confiance : communication, marketplace, collaboration.","pc6.h":"Continuité","pc6.p":"Un système de continuité numérique. Plus vous vivez, mieux TuIA vous comprend.","priv.ha":"Vos conversations privées","priv.hb":"restent privées.","trust.1":"Chiffrement de bout en bout","trust.2":"Jamais utilisées pour l'entraînement","trust.3":"Jamais analysées sans permission","trust.4":"Tout supprimer, à tout moment","priv.tag":"Confidentialité par architecture.","promise.a":"Plus vous vivez, mieux","promise.b":"TuIA vous comprend.","foot.ha":"Conçue autour de","foot.hb":"votre vie.","foot.p":"Rejoignez la première intelligence Memory-Native. Accès anticipé limité.","foot.bar":"Android · iOS en développement · © 2026","foot.privacy":"Confidentialité","foot.terms":"Conditions","wl.title":"Rejoindre l'accès anticipé","wl.sub":"Soyez parmi les premiers à essayer la première intelligence Memory-Native.","wl.name":"Votre nom","wl.email":"vous@email.com","wl.submit":"Demander l'accès","wl.consent":'En vous inscrivant, vous acceptez notre <a href="{P}">Politique de confidentialité</a> et nos <a href="{T}">Conditions</a>.',"st.invalid":"Veuillez saisir une adresse e-mail valide.","st.sending":"Envoi…","st.ok":"Vous êtes sur la liste ! Nous vous contacterons.","st.err":"Une erreur s'est produite. Veuillez réessayer."},
+de:{"meta.title":"TuIA — Die erste Memory-Native Intelligenz","nav.cta":"Frühzugang","hero.badge":"Memory-Native Intelligence","hero.h1a":"Die erste Memory-Native Intelligenz","hero.h1b":"rund um dein Leben gebaut.","hero.sub":"TuIA verbindet deine Erinnerungen, Beziehungen, Ziele, Kommunikation und deinen Kontext zu einer einzigen lebendigen Intelligenz, die einzigartig deine wird.","btn.join":"Frühzugang sichern →","btn.demo":"▶ Demo ansehen","pill.1":"Dauerhaftes Gedächtnis","pill.2":"Datenschutz durch Architektur","pill.3":"Nativ auf iOS und Android","pill.4":"Rund um dein Leben gebaut","s1.eyebrow":"Grundüberzeugung","s1.ha":"Du brauchst keine weiteren Apps.","s1.hb":"Du brauchst Kontinuität.","s1.lead":"Technologie wurde fragmentiert. E-Mail an einem Ort, Kalender an einem anderen, Nachrichten woanders. Erinnerungen verblassen. Beziehungen werden zu Daten. Das Problem war nie der Zugang zu Informationen – es war das Fehlen von Gedächtnis.","s2.ha":"Die KI war nie das Problem.","s2.hb":"Das Gedächtnis schon.","s2.p1l":"Die meisten KIs erinnern sich an Gespräche.","s2.p1r":"TuIA erinnert sich an den Kontext.","s2.p2l":"Die meisten KIs antworten.","s2.p2r":"TuIA versteht.","s2.p3l":"Die meisten KIs starten mit Prompts.","s2.p3r":"TuIA startet aus dem Gedächtnis.","s2.p4l":"Die meisten Apps verwalten Informationen.","s2.p4r":"TuIA versteht Leben.","s3.eyebrow":"Eine neue Kategorie","s3.h":"Ein Gedächtnis. Jeder Kontext.","s3.lead":"Eine Intelligenz, die auf dauerhaftem Gedächtnis aufbaut – und dein Leben über Zeit, Beziehungen und Kontexte hinweg versteht.","orbit.email.t":"E-Mail","orbit.email.s":"Kennt deinen Kontext","orbit.cal.t":"Kalender","orbit.cal.s":"Kennt deine Zeit","orbit.health.t":"Gesundheit","orbit.health.s":"Kennt dein Wohlbefinden","orbit.travel.t":"Reisen","orbit.travel.s":"Kennt deine Pläne","orbit.rel.t":"Beziehungen","orbit.rel.s":"Weiß, wer zählt","orbit.chat.t":"E2E-Chat","orbit.chat.s":"Weiß nichts","phone.greet":"Guten Morgen, Filippo.","phone.ev1":"Anruf mit Adam","phone.ev2":"G-Living Review","pillars.eyebrow":"Markensäulen","pillars.h":"Auf dem gebaut, was zählt.","pc1.h":"Gedächtnis","pc1.p":"Dauerhaftes Verständnis über die Zeit. Keine isolierten Interaktionen – kontinuierliche Intelligenz.","pc2.h":"Beziehungen","pc2.p":"Technologie sollte menschliche Verbindungen stärken, nicht ersetzen. Familie. Freunde. Vertraute Kontakte.","pc3.h":"Datenschutz","pc3.p":"Vertrauen ist nicht verhandelbar. Ende-zu-Ende-verschlüsselt. Explizite Berechtigungen. Datenschutz durch Architektur.","pc4.h":"Wohlbefinden","pc4.p":"Technologie sollte Stress reduzieren, nicht erzeugen. Gesundheit, SOS und tägliche Begleitung integriert.","pc5.h":"Gemeinschaft","pc5.p":"Keine Plattform. Kein soziales Netzwerk. Ein vertrauenswürdiges Ökosystem – Kommunikation, Marktplatz, Zusammenarbeit.","pc6.h":"Kontinuität","pc6.p":"Ein System digitaler Kontinuität. Je mehr du lebst, desto besser versteht dich TuIA.","priv.ha":"Deine privaten Gespräche","priv.hb":"bleiben privat.","trust.1":"Ende-zu-Ende-verschlüsselt","trust.2":"Nie fürs Training verwendet","trust.3":"Nie ohne Erlaubnis analysiert","trust.4":"Lösche alles, jederzeit","priv.tag":"Datenschutz durch Architektur.","promise.a":"Je mehr du lebst, desto besser","promise.b":"versteht dich TuIA.","foot.ha":"Gebaut rund um","foot.hb":"dein Leben.","foot.p":"Werde Teil der ersten Memory-Native Intelligenz. Begrenzter Frühzugang.","foot.bar":"Android · iOS in Entwicklung · © 2026","foot.privacy":"Datenschutz","foot.terms":"AGB","wl.title":"Frühzugang sichern","wl.sub":"Sei unter den Ersten, die die erste Memory-Native Intelligenz testen.","wl.name":"Dein Name","wl.email":"du@email.com","wl.submit":"Zugang anfragen","wl.consent":'Mit der Anmeldung akzeptierst du unsere <a href="{P}">Datenschutzrichtlinie</a> und <a href="{T}">AGB</a>.',"st.invalid":"Bitte gib eine gültige E-Mail-Adresse ein.","st.sending":"Senden…","st.ok":"Du bist auf der Liste! Wir melden uns.","st.err":"Etwas ist schiefgelaufen. Bitte versuche es erneut."},
+pt:{"meta.title":"TuIA — A primeira inteligência Memory-Native","nav.cta":"Acesso antecipado","hero.badge":"Memory-Native Intelligence","hero.h1a":"A primeira inteligência Memory-Native","hero.h1b":"criada em torno da sua vida.","hero.sub":"A TuIA conecta as suas memórias, relações, objetivos, comunicação e contexto numa única inteligência viva que se torna unicamente sua.","btn.join":"Entrar no acesso antecipado →","btn.demo":"▶ Ver demo","pill.1":"Memória persistente","pill.2":"Privacidade por arquitetura","pill.3":"Nativa em iOS e Android","pill.4":"Criada em torno da sua vida","s1.eyebrow":"Crença fundadora","s1.ha":"Você não precisa de mais apps.","s1.hb":"Você precisa de continuidade.","s1.lead":"A tecnologia tornou-se fragmentada. O e-mail num lugar, o calendário noutro, as mensagens noutro sítio. As memórias desvanecem-se. As relações tornam-se dados. O problema nunca foi o acesso à informação: foi a ausência de memória.","s2.ha":"A IA nunca foi o problema.","s2.hb":"A memória foi.","s2.p1l":"A maioria das IA lembra-se de conversas.","s2.p1r":"A TuIA lembra-se do contexto.","s2.p2l":"A maioria das IA responde.","s2.p2r":"A TuIA compreende.","s2.p3l":"A maioria das IA parte de prompts.","s2.p3r":"A TuIA parte da memória.","s2.p4l":"A maioria das apps gere informação.","s2.p4r":"A TuIA compreende vidas.","s3.eyebrow":"Uma nova categoria","s3.h":"Uma memória. Cada contexto.","s3.lead":"Uma inteligência construída sobre memória persistente, que compreende a sua vida ao longo do tempo, das relações e dos contextos.","orbit.email.t":"E-mail","orbit.email.s":"Conhece o seu contexto","orbit.cal.t":"Calendário","orbit.cal.s":"Conhece o seu tempo","orbit.health.t":"Saúde","orbit.health.s":"Conhece o seu bem-estar","orbit.travel.t":"Viagens","orbit.travel.s":"Conhece os seus planos","orbit.rel.t":"Relações","orbit.rel.s":"Sabe quem importa","orbit.chat.t":"Chat E2E","orbit.chat.s":"Não sabe nada","phone.greet":"Bom dia, Filippo.","phone.ev1":"Chamada com Adam","phone.ev2":"Revisão G-Living","pillars.eyebrow":"Pilares da marca","pillars.h":"Construída sobre o que importa.","pc1.h":"Memória","pc1.p":"Compreensão persistente ao longo do tempo. Não interações isoladas: inteligência contínua.","pc2.h":"Relações","pc2.p":"A tecnologia deve fortalecer as ligações humanas, não substituí-las. Família. Amigos. Contactos de confiança.","pc3.h":"Privacidade","pc3.p":"A confiança é inegociável. Cifragem ponta a ponta. Permissões explícitas. Privacidade por arquitetura.","pc4.h":"Bem-estar","pc4.p":"A tecnologia deve reduzir o stress, não criá-lo. Saúde, SOS e orientação diária integrados.","pc5.h":"Comunidade","pc5.p":"Não é uma plataforma. Não é uma rede social. Um ecossistema de confiança: comunicação, marketplace, colaboração.","pc6.h":"Continuidade","pc6.p":"Um sistema de continuidade digital. Quanto mais vive, melhor a TuIA o compreende.","priv.ha":"As suas conversas privadas","priv.hb":"permanecem privadas.","trust.1":"Cifragem ponta a ponta","trust.2":"Nunca usadas para treino","trust.3":"Nunca analisadas sem permissão","trust.4":"Apague tudo, quando quiser","priv.tag":"Privacidade por arquitetura.","promise.a":"Quanto mais vive, melhor","promise.b":"a TuIA o compreende.","foot.ha":"Criada em torno da","foot.hb":"sua vida.","foot.p":"Junte-se à primeira inteligência Memory-Native. Acesso antecipado limitado.","foot.bar":"Android · iOS em desenvolvimento · © 2026","foot.privacy":"Privacidade","foot.terms":"Termos","wl.title":"Entrar no acesso antecipado","wl.sub":"Seja dos primeiros a experimentar a primeira inteligência Memory-Native.","wl.name":"O seu nome","wl.email":"voce@email.com","wl.submit":"Solicitar acesso","wl.consent":'Ao juntar-se, aceita a nossa <a href="{P}">Política de Privacidade</a> e os <a href="{T}">Termos</a>.',"st.invalid":"Introduza um endereço de e-mail válido.","st.sending":"A enviar…","st.ok":"Está na lista! Entraremos em contacto.","st.err":"Algo correu mal. Tente novamente."}
+};
+window.__lang="en";
+function legalHref(lang){
+ if(lang==="es")return{p:"privacy_es.html",t:"terms_es.html"};
+ if(lang==="it")return{p:"privacy.html",t:"terms.html"};
+ return{p:"privacy_en.html",t:"terms_en.html"};
+}
+function applyLang(lang){
+ var d=I18N[lang]||I18N.en; if(!I18N[lang])lang="en";
+ window.__lang=lang;
+ document.documentElement.setAttribute("lang",lang);
+ if(d["meta.title"])document.title=d["meta.title"];
+ var lh=legalHref(lang);
+ document.querySelectorAll("[data-i18n]").forEach(function(el){
+  var v=d[el.getAttribute("data-i18n")]; if(v!=null)el.textContent=v;
+ });
+ document.querySelectorAll("[data-i18n-ph]").forEach(function(el){
+  var v=d[el.getAttribute("data-i18n-ph")]; if(v!=null)el.setAttribute("placeholder",v);
+ });
+ document.querySelectorAll("[data-i18n-html]").forEach(function(el){
+  var v=d[el.getAttribute("data-i18n-html")];
+  if(v!=null)el.innerHTML=v.replace("{P}",lh.p).replace("{T}",lh.t);
+ });
+ document.querySelectorAll("[data-legal]").forEach(function(el){
+  el.setAttribute("href",el.getAttribute("data-legal")==="privacy"?lh.p:lh.t);
+ });
+ document.querySelectorAll(".flag").forEach(function(b){
+  b.classList.toggle("active",b.getAttribute("data-lang")===lang);
+ });
+}
+document.querySelectorAll(".flag").forEach(function(b){
+ b.addEventListener("click",function(){applyLang(b.getAttribute("data-lang"))});
+});
+(function(){
+ var n=(navigator.language||navigator.userLanguage||"en").slice(0,2).toLowerCase();
+ applyLang(I18N[n]?n:"en");
+})();
+
+/* ---- reveal on scroll + parallax ---- */
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.16});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4*0.07)+'s';io.observe(el)});
+addEventListener('scroll',()=>{const y=scrollY,ph=document.querySelector('.phone');if(ph&&y<2400)ph.style.transform='translateY('+(y*0.03)+'px)'});
+</script>
+<script>
 (function(){
  var ENDPOINT="https://script.google.com/macros/s/AKfycbwT28nPbcEtexGoUZ7LhTqk2rW747XgJspSOo2pRdlYtgSkD4-Ul8ApzLhUx3un5-M/exec";
- var LOCALE="en";
- var T={invalid:"Please enter a valid email address.",sending:"Sending…",ok:"You're on the list! We'll be in touch.",err:"Something went wrong. Please try again."};
+ function msg(k){var d=I18N[window.__lang]||I18N.en;return d["st."+k]}
  var ov=document.getElementById('wlOverlay'),form=document.getElementById('wlForm'),
      nameI=document.getElementById('wlName'),emailI=document.getElementById('wlEmail'),
      btn=document.getElementById('wlSubmit'),stat=document.getElementById('wlStatus');
@@ -293,11 +363,11 @@ addEventListener('scroll',()=>{const y=scrollY,ph=document.querySelector('.phone
  form.addEventListener('submit',function(e){
   e.preventDefault();
   var email=emailI.value.trim(),name=nameI.value.trim();
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){stat.className='wl-status err';stat.textContent=T.invalid;emailI.focus();return}
-  btn.disabled=true;stat.className='wl-status';stat.textContent=T.sending;
-  fetch(ENDPOINT,{method:'POST',mode:'no-cors',body:new URLSearchParams({email:email,name:name,locale:LOCALE,source:'landing'})})
-   .then(function(){stat.className='wl-status ok';stat.textContent=T.ok;form.reset();btn.disabled=false;setTimeout(close,2200)})
-   .catch(function(){btn.disabled=false;stat.className='wl-status err';stat.textContent=T.err});
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){stat.className='wl-status err';stat.textContent=msg('invalid');emailI.focus();return}
+  btn.disabled=true;stat.className='wl-status';stat.textContent=msg('sending');
+  fetch(ENDPOINT,{method:'POST',mode:'no-cors',body:new URLSearchParams({email:email,name:name,locale:window.__lang,source:'landing'})})
+   .then(function(){stat.className='wl-status ok';stat.textContent=msg('ok');form.reset();btn.disabled=false;setTimeout(close,2200)})
+   .catch(function(){btn.disabled=false;stat.className='wl-status err';stat.textContent=msg('err')});
  });
 })();
 </script>
