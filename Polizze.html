@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Peritale Intelligente - Il Futuro delle Perizie</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1e293b; }
+        .gradient-bg { background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%); }
+        .card-shadow { box-shadow: 0 10px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.04); }
+        .step-line::after { content: ''; position: absolute; left: 24px; top: 60px; bottom: -20px; width: 2px; background: #e2e8f0; }
+        .step-line:last-child::after { display: none; }
+        .mockup-shadow { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+        .pulse-dot { animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.5); } 70% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); } 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); } }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- HERO SECTION -->
+    <header class="gradient-bg text-white">
+        <div class="max-w-6xl mx-auto px-6 py-20 text-center">
+            <div class="inline-block bg-blue-500/20 border border-blue-400/30 rounded-full px-4 py-1 text-sm font-medium mb-6 backdrop-blur-sm">
+                Riservato alla Direzione
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                Moltiplica i risultati del tuo<br>Studio Peritale. <span class="text-blue-300">Senza assumere.</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-10 font-light">
+                Trasforma 50 anni di esperienza della tua azienda in un sistema automatico che fa il lavoro di 3 periti junior, lasciando a te la sola firma finale.
+            </p>
+            <a href="#tempo" class="inline-block bg-white text-blue-900 font-bold px-8 py-4 rounded-lg hover:bg-blue-50 transition-all transform hover:scale-105 shadow-lg">
+                Scopri quanto tempo risparmi
+            </a>
+        </div>
+    </header>
+
+    <!-- TEMPO RISPARMIATO (ROI) -->
+    <section id="tempo" class="max-w-6xl mx-auto px-6 -mt-16 relative z-10">
+        <div class="bg-white rounded-2xl card-shadow p-8 md:p-12 border border-slate-100">
+            <h2 class="text-2xl font-bold text-center mb-8 text-slate-800">L'impatto economico su una singola pratica standard</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- PRIMA -->
+                <div class="bg-red-50 rounded-xl p-6 border border-red-100">
+                    <h3 class="font-bold text-red-800 text-lg mb-4 flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Processo Attuale (Umano)
+                    </h3>
+                    <ul class="space-y-3 text-sm text-slate-700">
+                        <li class="flex justify-between border-b border-red-100 pb-2"><span>Raccolta documenti e spunta</span> <span class="font-bold text-red-700">45 min</span></li>
+                        <li class="flex justify-between border-b border-red-100 pb-2"><span>Controllo antifrode manuale</span> <span class="font-bold text-red-700">1 ora</span></li>
+                        <li class="flex justify-between border-b border-red-100 pb-2"><span>Calcoli e stesura perizia</span> <span class="font-bold text-red-700">3 ore</span></li>
+                        <li class="flex justify-between border-b border-red-100 pb-2"><span>Revisione e correzioni</span> <span class="font-bold text-red-700">1 ora</span></li>
+                        <li class="flex justify-between pt-2 text-base"><span class="font-bold">TEMPO TOTALE</span> <span class="font-extrabold text-red-800">5 ore e 45 min</span></li>
+                    </ul>
+                </div>
+                <!-- DOPO -->
+                <div class="bg-emerald-50 rounded-xl p-6 border border-emerald-100">
+                    <h3 class="font-bold text-emerald-800 text-lg mb-4 flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        Con il Nuovo Sistema
+                    </h3>
+                    <ul class="space-y-3 text-sm text-slate-700">
+                        <li class="flex justify-between border-b border-emerald-100 pb-2"><span>Caricamento documenti (1 click)</span> <span class="font-bold text-emerald-700">2 min</span></li>
+                        <li class="flex justify-between border-b border-emerald-100 pb-2"><span>Analisi e calcolo automatico</span> <span class="font-bold text-emerald-700">4 min</span></li>
+                        <li class="flex justify-between border-b border-emerald-100 pb-2"><span>Approvazione del Perito (Tu)</span> <span class="font-bold text-emerald-700">15 min</span></li>
+                        <li class="flex justify-between border-b border-emerald-100 pb-2"><span>Revisione conformità automatica</span> <span class="font-bold text-emerald-700">0 min</span></li>
+                        <li class="flex justify-between pt-2 text-base"><span class="font-bold">TEMPO TOTALE</span> <span class="font-extrabold text-emerald-800">21 minuti</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 text-center bg-slate-900 text-white rounded-xl p-4">
+                <span class="text-slate-400 text-sm">Risparmio garantito per pratica:</span>
+                <span class="text-3xl font-extrabold ml-3 text-emerald-400">-94% del tempo</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- COME FUNZIONA (FLOW E MEMORIA) -->
+    <section class="max-w-6xl mx-auto px-6 py-20">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-slate-800 mb-4">Come funziona in pratica</h2>
+            <p class="text-slate-500 max-w-2xl mx-auto">Niente robot che sostituiscono le persone. Un sistema a "cascata" dove esperti artificiali specializzati fanno il lavoro di ripetizione, e tu dai solo l'approvazione finale.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-16 items-start">
+            <!-- IL FLUSSO LAVORO -->
+            <div>
+                <h3 class="font-bold text-xl mb-8 text-slate-800 flex items-center">
+                    <span class="bg-blue-100 text-blue-700 rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm font-bold">1</span>
+                    Il Flusso di Lavoro
+                </h3>
+                <div class="space-y-6">
+                    <!-- Step 1 -->
+                    <div class="flex items-start">
+                        <div class="bg-slate-200 rounded-full w-12 h-12 flex items-center justify-center text-slate-600 font-bold mr-4 shrink-0">1</div>
+                        <div>
+                            <h4 class="font-semibold text-slate-800">Carico i documenti</h4>
+                            <p class="text-sm text-slate-500">Foto, moduli, documenti. Il sistema li legge e organizza da solo.</p>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="flex items-start">
+                        <div class="bg-amber-100 text-amber-700 rounded-full w-12 h-12 flex items-center justify-center font-bold mr-4 shrink-0">2</div>
+                        <div>
+                            <h4 class="font-semibold text-slate-800">Analisi e Controllo Antifrode</h4>
+                            <p class="text-sm text-slate-500">Il sistema incrocia i dati e ti avvisa immediatamente se qualcosa non torna, prima di perdere tempo.</p>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 text-blue-700 rounded-full w-12 h-12 flex items-center justify-center font-bold mr-4 shrink-0">3</div>
+                        <div>
+                            <h4 class="font-semibold text-slate-800">Perizia Automatica (Le Competenze)</h4>
+                            <p class="text-sm text-slate-500">A seconda del danno (Incendio, Idraulica, Edilizia), il sistema attiva il "perito virtuale" specializzato in quel settore, applica i tuoi calcoli e scrive la bozza.</p>
+                        </div>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="flex items-start">
+                        <div class="bg-emerald-100 text-emerald-700 rounded-full w-12 h-12 flex items-center justify-center font-bold mr-4 shrink-0 pulse-dot">4</div>
+                        <div>
+                            <h4 class="font-semibold text-slate-800">La Tua Approvazione</h4>
+                            <p class="text-sm text-slate-500">Il sistema si ferma. Tu leggi la sintesi, guardi i calcoli. Se va bene, un click e va in liquidazione. Se c'è da correggere, scrivi una nota e il sistema sistema la perizia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LA MEMORIA -->
+            <div>
+                <h3 class="font-bold text-xl mb-8 text-slate-800 flex items-center">
+                    <span class="bg-blue-100 text-blue-700 rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm font-bold">2</span>
+                    La "Memoria" del tuo Studio
+                </h3>
+                <p class="text-slate-500 text-sm mb-6">Questo non è un software generico. È un sistema che si nutre esclusivamente del <strong>modo in cui lavora la tua azienda</strong>. Ha 4 livelli di memoria:</p>
+                
+                <div class="space-y-4">
+                    <div class="bg-white p-4 rounded-lg border border-slate-200 card-shadow">
+                        <div class="flex items-center mb-2">
+                            <span class="text-blue-600 font-bold text-sm mr-2">LIVELLO 1</span>
+                            <span class="font-semibold text-slate-800">La Conoscenza</span>
+                        </div>
+                        <p class="text-xs text-slate-500">Legge e memorizza i manuali tecnici, le normative di legge e le tue clausole assicurative.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border border-slate-200 card-shadow">
+                        <div class="flex items-center mb-2">
+                            <span class="text-indigo-600 font-bold text-sm mr-2">LIVELLO 2</span>
+                            <span class="font-semibold text-slate-800">Le Tue Regole</span>
+                        </div>
+                        <p class="text-xs text-slate-500">I calcoli esatti, le franchigie e i depreciamenti che usate oggi vengono trasformati in regole matematiche invalicabili.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border border-slate-200 card-shadow">
+                        <div class="flex items-center mb-2">
+                            <span class="text-purple-600 font-bold text-sm mr-2">LIVELLO 3</span>
+                            <span class="font-semibold text-slate-800">Le Correzioni</span>
+                        </div>
+                        <p class="text-xs text-slate-500">Se tu correggi un errore del sistema oggi, domani non lo farà più. Impara dai tuoi ripensamenti.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border border-slate-200 card-shadow">
+                        <div class="flex items-center mb-2">
+                            <span class="text-slate-800 font-bold text-sm mr-2">LIVELLO 4</span>
+                            <span class="font-semibold text-slate-800">Le Metriche</span>
+                        </div>
+                        <p class="text-xs text-slate-500">Tiene traccia di quanto ci vuole in media per ogni tipo di danno, per ottimizzare i tempi.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MOCKUP INTERFACCIA (L'Approvazione Umana) -->
+    <section class="bg-slate-900 py-20">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white mb-4">Così vedrai il tuo lavoro</h2>
+                <p class="text-slate-400">Niente schermate complicate. Ti arriva una notifica, vedi la sintesi chiara, e decidi.</p>
+            </div>
+            
+            <!-- Fake App Window -->
+            <div class="bg-slate-800 rounded-2xl border border-slate-700 mockup-shadow overflow-hidden">
+                <!-- Top Bar -->
+                <div class="bg-slate-700 px-4 py-3 flex items-center border-b border-slate-600">
+                    <div class="flex space-x-2">
+                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                        <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                    </div>
+                    <div class="flex-1 text-center text-xs text-slate-400 font-mono">Pratica N. 2023-8841 - Danno Idraulico</div>
+                </div>
+                
+                <!-- App Content -->
+                <div class="p-6 md:p-8 flex flex-col md:flex-row gap-8">
+                    <!-- Left Side: Status -->
+                    <div class="md:w-1/3">
+                        <p class="text-xs text-slate-500 uppercase tracking-wider mb-3">Stato Pratica</p>
+                        <div class="flex flex-col space-y-2 text-sm">
+                            <div class="flex items-center text-emerald-400"><svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Documenti caricati</div>
+                            <div class="flex items-center text-emerald-400"><svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Antifrode superata</div>
+                            <div class="flex items-center text-emerald-400"><svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Calcolo completato</div>
+                            <div class="flex items-center text-blue-400 font-bold"><div class="w-2 h-2 bg-blue-400 rounded-full mr-2 pulse-dot"></div> In attesa tua firma</div>
+                            <div class="flex items-center text-slate-600"><svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path></svg> Liquidazione</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Side: The Ask -->
+                    <div class="md:w-2/3 bg-slate-700/50 rounded-xl p-6 border border-slate-600">
+                        <h4 class="text-white font-semibold mb-2">Sintesi del Sistema:</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            "Ho analizzato le foto della rottura del tubo in cucina. Ho calcolato i danni alla pavimentazione (4 mq di gres porcellanato) e alla sostituzione del tratto di tubo in multistrato. 
+                            <span class="text-yellow-300 font-medium">Ho applicato una franchigia del 10% come da vostra polizza standard casa.</span>
+                        </p>
+                        
+                        <div class="bg-slate-900 rounded-lg p-4 mb-6 border border-slate-600">
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Danno Calcolato:</span>
+                                <span class="text-white font-mono">€ 1.450,00</span>
+                            </div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Franchigia Applicata:</span>
+                                <span class="text-red-400 font-mono">- € 145,00</span>
+                            </div>
+                            <div class="border-t border-slate-600 pt-2 mt-2 flex justify-between text-base">
+                                <span class="text-white font-bold">Netto Liquidabile:</span>
+                                <span class="text-emerald-400 font-bold font-mono">€ 1.305,00</span>
+                            </div>
+                        </div>
+
+                        <!-- Human Approval Buttons -->
+                        <div class="flex space-x-3">
+                            <button class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-lg transition-colors flex items-center justify-center">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Approva e Invia
+                            </button>
+                            <button class="bg-slate-600 hover:bg-slate-500 text-white font-bold py-3 px-6 rounded-lg transition-colors flex items-center justify-center">
+                                Richiedi Modifica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRIVACY E SICUREZZA (Il tasto dolente per un 50enne) -->
+    <section class="max-w-4xl mx-auto px-6 py-20">
+        <div class="bg-white border-2 border-slate-200 rounded-2xl p-8 md:p-12 card-shadow relative overflow-hidden">
+            <!-- Icona lucchetto di sfondo -->
+            <div class="absolute top-0 right-0 text-[200px] text-slate-50 leading-none font-bold -mt-10 -mr-10 select-none">
+                <svg class="w-full h-full text-slate-100" fill="currentColor" viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2z"></path></svg>
+            </div>
+            
+            <div class="relative z-10">
+                <h2 class="text-3xl font-bold text-slate-800 mb-4">I vostri dati restano VOSTRI</h2>
+                <p class="text-slate-500 mb-8 text-lg">Sappiamo quanto siano sensibili le pratiche assicurative. Abbiamo progettato il sistema con la paranoia della sicurezza.</p>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 text-blue-700 rounded-lg p-2 mr-4 shrink-0">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Archivio Isolato</h4>
+                            <p class="text-sm text-slate-500 mt-1">Le vostre pratiche vengono lette e memorizzate in un "ambiente" digitale chiuso e separato. Nessun altro cliente o azienda può vedere o usare i vostri dati. Mai.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 text-blue-700 rounded-lg p-2 mr-4 shrink-0">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">No Data Sharing</h4>
+                            <p class="text-sm text-slate-500 mt-1">Non usiamo i vostri documenti per vendere pubblicità, non li cediamo a terzi, e non li usiamo per migliorare i sistemi di chiunque altro. Sono blindati.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 text-blue-700 rounded-lg p-2 mr-4 shrink-0">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Cancellazione Totale</h4>
+                            <p class="text-sm text-slate-500 mt-1">Se un giorno deciderete di non usare più il sistema, con un click cancelleremo in modo irreversibile ogni traccia delle vostre pratiche dai nostri server.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 text-blue-700 rounded-lg p-2 mr-4 shrink-0">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Server Europei</h4>
+                            <p class="text-sm text-slate-500 mt-1">Tecnologia ospitata su server situati in Europa, nel pieno e totale rispetto del GDPR e delle normative sulla privacy italiane ed europee.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER / CTA -->
+    <footer class="bg-slate-900 text-white py-16">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">Pronti a portare lo studio al livello successivo?</h2>
+            <p class="text-slate-400 mb-8 max-w-xl mx-auto">Possiamo mostrare un prototipo funzionante basato su una pratica reale (anonimizzata) della vostra azienda. Per farvi toccare con mano la precisione.</p>
+            <a href="mailto:tuamail@esempio.it" class="inline-block bg-blue-600 hover:bg-blue-500 text-white font-bold px-10 py-4 rounded-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                Richiedi una dimostrazione riservata
+            </a>
+            <p class="text-slate-600 text-xs mt-12">Documento confidenziale - Redatto per la direzione</p>
+        </div>
+    </footer>
+
+</body>
+</html>
