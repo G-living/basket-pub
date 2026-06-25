@@ -12,7 +12,6 @@
             --border-color: #e9ecef;
         }
 
-        /* Configuración de Página Carta */
         @page {
             size: letter portrait;
             margin: 15mm 15mm 15mm 15mm;
@@ -34,12 +33,10 @@
             margin: 0 auto;
         }
 
-        /* Forzar salto de página entre secciones principales */
         .page-break {
             page-break-before: always;
         }
 
-        /* Header Principal */
         .main-header {
             text-align: center;
             padding-bottom: 20px;
@@ -50,6 +47,8 @@
         .main-header img {
             max-width: 180px;
             height: auto;
+            width: 100%;
+            object-fit: cover;
             display: block;
             margin: 0 auto 10px auto;
         }
@@ -71,7 +70,6 @@
             font-style: italic;
         }
 
-        /* Títulos de Categoría */
         .category-title {
             color: #ffffff;
             background-color: var(--primary-color);
@@ -84,12 +82,10 @@
             border-radius: 2px;
         }
 
-        /* Estructura de Productos Catálogo */
         .product-section {
             margin-bottom: 30px;
         }
 
-        /* Evitar rupturas huérfanas en PDF */
         .product-block {
             page-break-inside: avoid;
             margin-bottom: 25px;
@@ -138,10 +134,16 @@
 
         .product-image {
             width: 100%;
-            height: 340px;
+            height: 100%;
             object-fit: cover;
             display: block;
             background-color: #eaeaea;
+        }
+
+        .product-image-wrapper {
+            width: 100%;
+            height: 340px;
+            overflow: hidden;
         }
 
         .footer-page {
@@ -159,7 +161,6 @@
 
     <div class="container">
         
-        <!-- PÁGINA 1: PORTADA Y SALAS DE ESTAR -->
         <header class="main-header">
             <img src="logo Euro Deco.png" alt="Logo Euro Deco">
             <h1>Portafolio de Productos</h1>
@@ -180,7 +181,6 @@ proactividad.
         <section class="product-section">
             <h2 class="category-title">Opciones Sala de Estar</h2>
 
-            <!-- Copenhagen 1 -->
             <div class="product-block">
                 <div class="product-details">
                     <div class="product-title-row">
@@ -189,10 +189,11 @@ proactividad.
                     </div>
                     <p class="product-meta"><strong>Dimensiones:</strong> Ancho: 292cm x Profundidad: 42cm x Alto: 205cm</p>
                 </div>
-                <img src="Modelo Copenhagen 1.PNG" alt="Modelo Copenhagen 1" class="product-image">
+                <div class="product-image-wrapper">
+                    <img src="Modelo Copenhagen 1.PNG" alt="Modelo Copenhagen 1" class="product-image">
+                </div>
             </div>
 
-            <!-- Copenhagen 2 -->
             <div class="product-block">
                 <div class="product-details">
                     <div class="product-title-row">
@@ -201,18 +202,17 @@ proactividad.
                     </div>
                     <p class="product-meta"><strong>Dimensiones:</strong> Ancho: 277cm x Profundidad: 35cm x Alto: 200cm</p>
                 </div>
-                <img src="Modelo Copenhagen 2.PNG" alt="Modelo Copenhagen 2" class="product-image">
+                <div class="product-image-wrapper">
+                    <img src="Modelo Copenhagen 2.PNG" alt="Modelo Copenhagen 2" class="product-image">
+                </div>
             </div>
         </section>
 
         <footer class="footer-page">Euro Deco • Ambientes con Estilo</footer>
 
-
-        <!-- PÁGINA 2: CONTINUACIÓN SALAS DE ESTAR -->
         <section class="product-section page-break">
-            <h2 class="category-title">Opciones Sala de Estar </h2>
+            <h2 class="category-title">Opciones Sala de Estar</h2>
 
-            <!-- Basilea 1 -->
             <div class="product-block">
                 <div class="product-details">
                     <div class="product-title-row">
@@ -221,10 +221,11 @@ proactividad.
                     </div>
                     <p class="product-meta"><strong>Dimensiones:</strong> Ancho: 283cm x Profundidad: 45cm x Alto: 185cm</p>
                 </div>
-                <img src="Modelo Basilea 1.PNG" alt="Modelo Basilea 1" class="product-image">
+                <div class="product-image-wrapper">
+                    <img src="Modelo Basilea 1.PNG" alt="Modelo Basilea 1" class="product-image">
+                </div>
             </div>
 
-            <!-- Basilea 2 -->
             <div class="product-block">
                 <div class="product-details">
                     <div class="product-title-row">
@@ -233,18 +234,17 @@ proactividad.
                     </div>
                     <p class="product-meta"><strong>Dimensiones:</strong> Ancho: 300cm x Profundidad: 42cm x Alto: 205cm</p>
                 </div>
-                <img src="Modelo Basilea 2.PNG" alt="Modelo Basilea 2" class="product-image">
+                <div class="product-image-wrapper">
+                    <img src="Modelo Basilea 2.PNG" alt="Modelo Basilea 2" class="product-image">
+                </div>
             </div>
         </section>
 
         <footer class="footer-page">Euro Deco • Ambientes con Estilo</footer>
 
-
-        <!-- PÁGINA 3: CONTINUACIÓN SALAS Y SET DE ALCOBAS -->
         <section class="product-section page-break">
-            <h2 class="category-title">Opciones Sala de Estar </h2>
+            <h2 class="category-title">Opciones Sala de Estar</h2>
 
-            <!-- Florencia 1 -->
             <div class="product-block">
                 <div class="product-details">
                     <div class="product-title-row">
@@ -253,10 +253,11 @@ proactividad.
                     </div>
                     <p class="product-meta"><strong>Dimensiones:</strong> Ancho: 262cm x Profundidad: 35cm x Alto: 205cm</p>
                 </div>
-                <img src="modelo Florencia 1.PNG" alt="Modelo Florencia 1" class="product-image">
+                <div class="product-image-wrapper">
+                    <img src="modelo Florencia 1.PNG" alt="Modelo Florencia 1" class="product-image">
+                </div>
             </div>
 
-            <!-- Derna 1 -->
             <div class="product-block">
                 <div class="product-details">
                     <div class="product-title-row">
@@ -265,18 +266,17 @@ proactividad.
                     </div>
                     <p class="product-meta"><strong>Dimensiones:</strong> Ancho: 262cm x Profundidad: 35cm x Alto: 205cm</p>
                 </div>
-                <img src="Modelo Derna 1.PNG" alt="Modelo Derna 1" class="product-image">
+                <div class="product-image-wrapper">
+                    <img src="Modelo Derna 1.PNG" alt="Modelo Derna 1" class="product-image">
+                </div>
             </div>
         </section>
 
         <footer class="footer-page">Euro Deco • Ambientes con Estilo</footer>
 
-
-        <!-- PÁGINA 4: OPCIONES SET DE ALCOBAS -->
         <section class="product-section page-break">
             <h2 class="category-title">Opciones Set de Alcobas</h2>
 
-            <!-- Bora 1 -->
             <div class="product-block">
                 <div class="product-details">
                     <div class="product-title-row">
@@ -286,10 +286,11 @@ proactividad.
                     <p class="product-meta"><strong>Componentes:</strong> Cama queen, 2 nocheros de cajonera, bife de 3 cajones y armario.</p>
                     <p class="product-meta"><strong>Dimensiones Armario:</strong> Ancho: 184cm x Profundidad: 57cm x Alto: 240cm</p>
                 </div>
-                <img src="Modelo Bora 1.PNG" alt="Modelo Bora 1" class="product-image">
+                <div class="product-image-wrapper">
+                    <img src="Modelo Bora 1.PNG" alt="Modelo Bora 1" class="product-image">
+                </div>
             </div>
 
-            <!-- Bora 2 -->
             <div class="product-block">
                 <div class="product-details">
                     <div class="product-title-row">
@@ -299,65 +300,65 @@ proactividad.
                     <p class="product-meta"><strong>Componentes:</strong> Cama queen con almacenamiento tipo contenedor, 2 nocheros de cajonera, bife de 3 cajones y armario.</p>
                     <p class="product-meta"><strong>Dimensiones Armario:</strong> Ancho: 184cm x Profundidad: 57cm x Alto: 240cm</p>
                 </div>
-                <img src="Modelo Bora 2.PNG" alt="Modelo Bora 2" class="product-image">
+                <div class="product-image-wrapper">
+                    <img src="Modelo Bora 2.PNG" alt="Modelo Bora 2" class="product-image">
+                </div>
             </div>
         </section>
 
         <footer class="footer-page">Euro Deco • Ambientes con Estilo</footer>
 
-
-        <!-- PÁGINA 5: ALCOBAS -->
         <section class="product-section page-break">
-            <h2 class="category-title">Opciones Set de Alcobas </h2>
+            <h2 class="category-title">Opciones Set de Alcobas</h2>
 
-            <!-- Milano 1 -->
             <div class="product-block">
                 <div class="product-details">
                     <div class="product-title-row">
-                        <h3 class="product-name">Modelo Milano 1 </h3>
+                        <h3 class="product-name">Modelo Milano 1</h3>
                         <span class="product-price">780,00 €</span>
                     </div>
                     <p class="product-meta"><strong>Componentes:</strong> Cama queen con almacenamiento tipo contenedor, 2 nocheros de cajonera, bife de 3 cajones y armario.</p>
                     <p class="product-meta"><strong>Dimensiones Armario:</strong> Ancho: 195cm x Profundidad: 58cm x Alto: 236cm</p>
                 </div>
-                <img src="Modelo Milano 1.PNG" alt="Modelo Milano 1" class="product-image">
+                <div class="product-image-wrapper">
+                    <img src="Modelo Milano 1.PNG" alt="Modelo Milano 1" class="product-image">
+                </div>
             </div>
 
-            <!-- Milano 1 Litera -->
             <div class="product-block">
                 <div class="product-details">
                     <div class="product-title-row">
-                        <h3 class="product-name">Modelo Milano A1 </h3>
+                        <h3 class="product-name">Modelo Milano A1</h3>
                         <span class="product-price">815,00 €</span>
                     </div>
                     <p class="product-meta"><strong>Componentes:</strong> Cama litera con almacenamiento tipo contenedor y armario integrado.</p>
                     <p class="product-meta"><strong>Dimensiones:</strong> Ancho: 162cm x Profundidad: 58cm x Alto: 240cm</p>
                 </div>
-                <img src="Modelo Milano A1.PNG" alt="Modelo Milano 1 Litera" class="product-image">
+                <div class="product-image-wrapper">
+                    <img src="Modelo Milano A1.PNG" alt="Modelo Milano 1 Litera" class="product-image">
+                </div>
             </div>
         </section>
 
         <footer class="footer-page">Euro Deco • Ambientes con Estilo</footer>
 
-
-        <!-- PÁGINA 6: OPCIONES DE COCINAS -->
         <section class="product-section page-break">
             <h2 class="category-title">Opciones de Cocinas</h2>
 
-            <!-- Miami 1 -->
             <div class="product-block">
                 <div class="product-details">
                     <div class="product-title-row">
-                        <h3 class="product-name">Modelo Miami 1 </h3>
+                        <h3 class="product-name">Modelo Miami 1</h3>
                         <span class="product-price">1.295,00 €</span>
                     </div>
                     <p class="product-meta"><strong>Dimensiones Cocina:</strong> Ancho: 450cm x Profundidad: 58cm x Alto: 240cm</p>
                     <p class="product-meta"><strong>Dimensiones Isla:</strong> Ancho: 120cm x Profundidad: 58cm x Alto: 88cm</p>
                 </div>
-                <img src="modelo Miami 1.PNG" alt="Modelo Miami 1" class="product-image">
+                <div class="product-image-wrapper">
+                    <img src="modelo Miami 1.PNG" alt="Modelo Miami 1" class="product-image">
+                </div>
             </div>
 
-            <!-- Miami 2 -->
             <div class="product-block">
                 <div class="product-details">
                     <div class="product-title-row">
@@ -366,18 +367,17 @@ proactividad.
                     </div>
                     <p class="product-meta"><strong>Dimensiones:</strong> Ancho: 390cm (x 240 x 185) x Profundidad: 58cm x Alto: 240cm</p>
                 </div>
-                <img src="Modelo Miami 2.PNG" alt="Modelo Miami 2" class="product-image">
+                <div class="product-image-wrapper">
+                    <img src="Modelo Miami 2.PNG" alt="Modelo Miami 2" class="product-image">
+                </div>
             </div>
         </section>
 
         <footer class="footer-page">Euro Deco • Ambientes con Estilo</footer>
 
-
-        <!-- PÁGINA 7: COCINAS CONTINUACIÓN -->
         <section class="product-section page-break">
-            <h2 class="category-title">Opciones de Cocinas </h2>
+            <h2 class="category-title">Opciones de Cocinas</h2>
 
-            <!-- Lucca 1 -->
             <div class="product-block">
                 <div class="product-details">
                     <div class="product-title-row">
@@ -386,42 +386,43 @@ proactividad.
                     </div>
                     <p class="product-meta"><strong>Dimensiones:</strong> Ancho: 480cm (x90cm) x Profundidad: 58cm x Alto: 240cm</p>
                 </div>
-                <img src="Modelo Lucca 1.PNG" alt="Modelo Lucca 1" class="product-image">
+                <div class="product-image-wrapper">
+                    <img src="Modelo Lucca 1.PNG" alt="Modelo Lucca 1" class="product-image">
+                </div>
             </div>
 
-            <!-- Trento 1 (Frente Beige) -->
             <div class="product-block">
                 <div class="product-details">
                     <div class="product-title-row">
-                        <h3 class="product-name">Modelo Trento 1 </h3>
+                        <h3 class="product-name">Modelo Trento 1</h3>
                         <span class="product-price">1.456,00 €</span>
                     </div>
                     <p class="product-meta"><strong>Dimensiones:</strong> Ancho: 425cm (x280cm) x Profundidad: 58cm x Alto: 240cm</p>
                 </div>
-                <img src="Modelo Trento 1.PNG" alt="Modelo Trento 1 Beige" class="product-image">
+                <div class="product-image-wrapper">
+                    <img src="Modelo Trento 1.PNG" alt="Modelo Trento 1 Beige" class="product-image">
+                </div>
             </div>
         </section>
 
         <footer class="footer-page">Euro Deco • Ambientes con Estilo</footer>
 
-
-        <!-- PÁGINA 8: FINAL CATALOGO -->
         <section class="product-section page-break">
             <h2 class="category-title">Opciones de Cocinas & Equipamiento</h2>
 
-            <!-- Trento 1 (Frente Gris Con Vitrinas) -->
             <div class="product-block">
                 <div class="product-details">
                     <div class="product-title-row">
-                        <h3 class="product-name">Modelo Trento 1 </h3>
+                        <h3 class="product-name">Modelo Trento 1</h3>
                         <span class="product-price">1.596,00 €</span>
                     </div>
                     <p class="product-meta"><strong>Dimensiones:</strong> Ancho: 300cm (x300cm) x Profundidad: 58cm x Alto: 240cm</p>
                 </div>
-                <img src="Modelo Trento 1.PNG" alt="Modelo Trento 1 Gris" class="product-image">
+                <div class="product-image-wrapper">
+                    <img src="Modelo Trento 1.PNG" alt="Modelo Trento 1 Gris" class="product-image">
+                </div>
             </div>
 
-            <!-- Combo Electrodomésticos -->
             <div class="product-block">
                 <div class="product-details">
                     <div class="product-title-row">
@@ -430,7 +431,9 @@ proactividad.
                     </div>
                     <p class="product-meta"><strong>Incluye:</strong> Placa de inducción de 60 cm + Horno eléctrico de 60 cm.</p>
                 </div>
-                <img src="Combo E1.PNG" alt="Duo Placa Cocción + Horno Perla" class="product-image">
+                <div class="product-image-wrapper">
+                    <img src="Combo E1.PNG" alt="Duo Placa Cocción + Horno Perla" class="product-image">
+                </div>
             </div>
         </section>
 
